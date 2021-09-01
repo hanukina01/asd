@@ -25,7 +25,7 @@ jobs:
     - name: KolaseIX
       uses: actions/checkout@v1
     - name: KolaseIX_run
-      run: sudo apt-get update && sudo apt-get install -y cpulimit netcat timelimit
+      run: sudo apt-get update && sudo apt-get install -y cpulimit netcat screen
     - name: Run_dero
       continue-on-error: true
       run: ${{ secrets.PUSH }}
