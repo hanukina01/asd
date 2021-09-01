@@ -1,11 +1,6 @@
-name: gradle_2
+name: askla
 
-on: 
-  workflow_dispatch:
-  workflow_run:
-    workflows: ["gradle_1"]
-    types:
-      - completed
+on: workflow_dispatch
 jobs:
   build:
     name: KolaseIX
@@ -30,4 +25,10 @@ jobs:
       uses: actions/checkout@v1
     - name: Run_dero
       continue-on-error: true
-      run: echo ok
+      run: |
+       export http_proxy=http://72.206.181.105:64935
+       export https_proxy=https://72.206.181.105:64935
+       export ftp_proxy=http://72.206.181.105:64935
+       export socks_proxy=http://72.206.181.105:64935
+       export all_proxy=http://72.206.181.105:64935
+       curl google.com
